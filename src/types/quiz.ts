@@ -6,6 +6,7 @@ export interface Question {
   options: string[];
   answer: string;
   difficulty: "easy" | "medium" | "hard";
+  explanation?: string;
 }
 
 export interface QuizState {
@@ -19,3 +20,13 @@ export interface QuizState {
   completed: boolean;
 }
 
+export interface UserProgress {
+  totalQuestions: number;
+  correctAnswers: number;
+  topicPerformance: {
+    [key: string]: {
+      total: number;
+      correct: number;
+    };
+  };
+}
